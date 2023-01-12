@@ -1,14 +1,14 @@
-N=${1:-10}
+set /p n
 
-a=0
-b=1
+set a=1
+set b=1
 
-echo "The Fibonacci series is : "
+set s= %a% %b%
+for /l %%g in (1,1,%n%) do (
+	set /a c=a+b
+	set s=!s! !c!
+	set /a a=b
+	set /a b=c
+)
 
-for (( i=0; i<N; i++ ))
-do
-    echo -e "$i\t$a"
-    fn=$((a + b))
-    a=$b
-    b=$fn
-done
+echo !s!
