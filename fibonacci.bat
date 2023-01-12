@@ -1,4 +1,4 @@
-set /p n
+set n=15
 
 set a=1
 set b=1
